@@ -10,18 +10,31 @@
         echo $_SESSION['add'];
         unset($_SESSION['add']);
       }
+
+      if(isset($_SESSION['upload']))
+      {
+        echo $_SESSION['upload'];
+        unset($_SESSION['upload']);
+      }
     ?>
 
     <br> <br>
 
     <!-- Add Catagory Form Start -->
-    <form action=""method="post">
+    <form action=""method="POST" enctype="multipart/form-data">
       
         <table class="tbl_40">
             <tr>
                 <td>Title: </td>
                 <td>
                     <input type="text" name="title" placeholder="Catagory Title">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Select Image: </td>
+                <td>
+                  <input type="file" name="image">
                 </td>
             </tr>
 
@@ -73,9 +86,46 @@
           $active = "No";
         }
         
+        // Check weather the image is seleted or not and set the value for image name according ly 
+        // print_r($_FILES['image']);
+
+        // die();
+
+        if(isset($_FILES['image']['name']))
+        {
+          // upload the image
+          // to upload image wee need image name and source path or destination path
+          $image_name = $_FILES['image']['name'];
+          // Auto rename our image 
+          // get the extension of our image (jpg,png,etc) e.g. "food1.jpg"
+          $ext = end(explode('.',$image_name));
+          // Rename the image
+          $image_name = "Food_catagory_".rand(000, 999).'.'.$ext;
+          $source_path =$_FILES['image']['tmp_name'];
+
+          $destination_path = "../images/catagory/".$image_name;
+
+          // finally upload the image
+          $upload = move_uploaded_file($source_path,$destination_path);
+
+          // Check weather the image upload or not
+
+          if($upload==FALSE)
+          {
+            $_SESSION['upload']="<div class='error'> Failed to upload image</div>";
+            header('location: '.SITEURL.'Admin/add_catagory.php');
+            die();
+          }
+        }
+        else
+        {
+          // Dont upload image and set the image name value blank
+          $image_name = "";
+        }
 
         $sql = "INSERT INTO tbl_catagory SET
             title='$title',
+            image_name='$image_name',
             featured='$featured',
             active='$active'
         ";
