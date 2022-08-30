@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Restaurant Web</title>
+
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+<!-- Navbar Section Start From Here -->
+<section class="navbar">
+  <div class="container">
+    <a href="index.html">
+    <div class="logo">
+      <img src="images/logo.png" alt="Restaurant logo" class="img_responsive">
+    </div>
+    </a>
+
+    <div class="menu text_right">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Catagories</a></li>
+        <li><a href="#">Food</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</section>
+<!-- Navbar Section End From Here -->
+
+ <!-- Food Search Section Start From Here -->
+ <section class="food_search">
+  <div class="container">
+    <form action="" class="order">
+      <h2 class="text_center text_white">Fill This Form To Confirm Your Order</h2>
+
+      <fieldset>
+        <legend class="text_white">Selected Food</legend>
+
+        <div class="foox_box_img">
+          <img src="images/menu-burger.jpg" alt="Simple pizza" class="img_responsive img_curve">
+        </div>
+
+        <div class="food_box_dsc">
+          <h3>Special Burger</h3>
+          <p class="food_price">$3.50</p>
+          <h4>Quantity</h4>
+
+          <input type="number" name="qty" class="input_responsive" value="1" required>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend class="text_white">Order Details</legend>
+
+        <div class="order_label">Full Name</div>
+        <input type="text" name="full_name" placeholder="E.G. saiful Islam" class="input_responsive" required>
+
+        <div class="order_label">Phone Number</div>
+        <input type="number" name="contact" placeholder="E.G. 01784408797" class="input_responsive" required>
+
+        <div class="order_label">Email</div>
+        <input type="email" name="email" placeholder="E.G. midu@gmail.com" class="input_responsive" required>
+
+        <div class="order_label">Address</div>
+        <textarea name="address" rows="10" class="input_responsive"placeholder="road no . house no." ></textarea>
+
+        <input type="submit" name="submit" value="Confirm Order" class="btn btn_primary">
+        
+
+      </fieldset>
+      
+    </form>
+  </div>
+</section>
+<!-- Food Search Section End From Here -->
+
+</body>
+</html>
