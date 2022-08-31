@@ -59,7 +59,7 @@
                         ?>
 
                         <img src="<?php echo SITEURL;?>images/catagory/<?php echo $image_name;?>" width ="100px">
-                        
+
                         <?php
                       }
                       else
