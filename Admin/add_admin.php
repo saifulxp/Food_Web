@@ -4,13 +4,12 @@
   <div class="wrapper">
     <h1>Add Admin</h1>
     <br /> <br />
-    
+
     <?php
-         if(isset($_SESSION['add']))
-         {
-          echo $_SESSION['add'];
-          unset($_SESSION['add']);
-         }
+    if (isset($_SESSION['add'])) {
+      echo $_SESSION['add'];
+      unset($_SESSION['add']);
+    }
     ?>
     <form action="" method="POST">
       <table class="tbl_40">
@@ -21,13 +20,13 @@
           </td>
         </tr>
 
-        <tr>  
-        <td>User Name: </td>
+        <tr>
+          <td>User Name: </td>
           <td>
             <input type="text" name="username" placeholder="Enter username" required>
           </td>
         </tr>
-        
+
         <tr>
           <td>Password: </td>
           <td>
@@ -35,9 +34,9 @@
           </td>
         </tr>
 
-        <tr >
+        <tr>
           <td colspan="2">
-          <input type="submit" name="submit" value="Add Admin" class="btn_secoundary">
+            <input type="submit" name="submit" value="Add Admin" class="btn_secoundary">
           </td>
         </tr>
       </table>
@@ -48,33 +47,25 @@
 <?php include('partial/footer.php'); ?>
 
 <?php
-  if(isset($_POST['submit']))
-  {
-    $full_name=$_POST['full_name'];
-    $username=$_POST['username'];
-    $password=md5($_POST['password']);
+if (isset($_POST['submit'])) {
+  $full_name = $_POST['full_name'];
+  $username = $_POST['username'];
+  $password = md5($_POST['password']);
 
-    $sql="INSERT INTO tbl_admin SET
+  $sql = "INSERT INTO tbl_admin SET
     full_name='$full_name',
     username='$username',
     password='$password'
     ";
-    $res=mysqli_query($conn,$sql);
+  $res = mysqli_query($conn, $sql);
 
-    if($res==TRUE)
-    {
-      $_SESSION['add']="<div class='success'>Admin Added SuccessFully</div>";
-      header('location: '.SITEURL.'Admin/manage_admin.php');
-    }
-    else
-    {
-      $_SESSION['add']="Admin Added SuccessFully";
-      header('location: '.SITEURL.'Admin/add_admin.php');
-    }
-    
+  if ($res == TRUE) {
+    $_SESSION['add'] = "<div class='success'>Admin Added SuccessFully</div>";
+    header('location: ' . SITEURL . 'Admin/manage_admin.php');
+  } else {
+    $_SESSION['add'] = "Admin Added SuccessFully";
+    header('location: ' . SITEURL . 'Admin/add_admin.php');
   }
-  else
-  {
-
-  }
+} else {
+}
 ?>
