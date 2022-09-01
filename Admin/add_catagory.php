@@ -84,7 +84,7 @@
 
             if (isset($_FILES['image']['name'])) {
                 // upload the image
-                // to upload image wee need image name and source path or destination path
+                // to upload image wee need image name and source path and destination path
                 $image_name = $_FILES['image']['name'];
                 // Auto rename our image
                 // get the extension of our image (jpg,png,etc) e.g. "food1.jpg"

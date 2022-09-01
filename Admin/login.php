@@ -51,7 +51,7 @@ if(isset($_POST['submit']))
   $count= mysqli_num_rows($res);
   if($count==1)
   {
-    $_SESSION['login']="<div class='success'>Login Successfull</div>";
+    $_SESSION['login']="<div class='success text_center'>Login Successfull, Welcome To Admin Pannel</div>";
     $_SESSION['user'] = $username;
     header('location:'.SITEURL.'Admin/admin.php');
   }else

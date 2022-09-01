@@ -134,6 +134,7 @@ table tr{
 }
 .error{
   color: #ff4757;
+  font-weight: bold;
 }
 
 table{
