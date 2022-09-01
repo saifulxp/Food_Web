@@ -25,7 +25,7 @@
                 <tr>
                     <td>Title: </td>
                     <td>
-                        <input type="text" name="title" placeholder="Catagory Title">
+                        <input type="text" name="title" placeholder="Catagory Title" required>
                     </td>
                 </tr>
 

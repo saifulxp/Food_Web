@@ -70,7 +70,7 @@ if(isset($_POST['submit']))
   $res = mysqli_query($conn,$sql);
   if($res==TRUE)
   {
-    $_SESSION['update']="<div class='success'>Admin Updated Successfully</div>";
+    $_SESSION['update']="<div class='success text_center'>Admin Updated Successfully</div>";
     header('location: '.SITEURL.'Admin/manage_admin.php');
   }
   else

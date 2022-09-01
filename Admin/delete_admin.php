@@ -7,12 +7,12 @@ $res = mysqli_query($conn,$sql);
 
 if($res==TRUE)
 {
-  $_SESSION['delete']="Admin Deleted Successfully";
+  $_SESSION['delete']="<div class='success text_center'>Admin Deleted Successfully</div>";
   header('location: '.SITEURL.'Admin/manage_admin.php');
 }
 else
 {
-  $_SESSION['delete']="Admin Not Deleted";
+  $_SESSION['delete']="<div class='success text_center'>Admin Not Deleted</div>";
   header('location: '.SITEURL.'Admin/manage_admin.php');
 }
 ?>

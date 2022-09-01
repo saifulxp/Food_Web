@@ -67,7 +67,7 @@ if (isset($_POST['submit'])) {
         $res2 = mysqli_query($conn, $sql2);
 
         if ($res2 == TRUE) {
-          $_SESSION['pass-cng'] = "<div class='success'>Password Changed Successfully</div>";
+          $_SESSION['pass-cng'] = "<div class='success text_center'>Password Changed Successfully</div>";
           header('location: ' . SITEURL . 'Admin/manage_admin.php');
         } else {
           $_SESSION['pass-cng'] = "<div class='error'>password not changed </div>";

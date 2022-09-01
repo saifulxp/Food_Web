@@ -17,21 +17,21 @@
         <tr>
           <td>Full Name: </td>
           <td>
-            <input type="text" name="full_name" placeholder="Enter Your Name">
+            <input type="text" name="full_name" placeholder="Enter Your Name" required>
           </td>
         </tr>
 
         <tr>  
         <td>User Name: </td>
           <td>
-            <input type="text" name="username" placeholder="Enter username">
+            <input type="text" name="username" placeholder="Enter username" required>
           </td>
         </tr>
         
         <tr>
           <td>Password: </td>
           <td>
-            <input type="password" name="password" placeholder="Enter Password">
+            <input type="password" name="password" placeholder="Enter Password" required>
           </td>
         </tr>
 
